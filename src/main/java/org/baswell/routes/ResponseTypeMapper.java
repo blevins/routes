@@ -15,7 +15,7 @@
  */
 package org.baswell.routes;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.util.Set;

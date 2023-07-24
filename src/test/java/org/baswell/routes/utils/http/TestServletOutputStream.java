@@ -18,7 +18,8 @@ package org.baswell.routes.utils.http;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import javax.servlet.ServletOutputStream;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.WriteListener;
 
 public class TestServletOutputStream extends ServletOutputStream
 {
@@ -33,5 +34,15 @@ public class TestServletOutputStream extends ServletOutputStream
   public void write(int b) throws IOException
   {
     outStream.write(b);
+  }
+
+  @Override
+  public boolean isReady() {
+    return false;
+  }
+
+  @Override
+  public void setWriteListener(WriteListener writeListener) {
+
   }
 }

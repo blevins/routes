@@ -18,7 +18,8 @@ package org.baswell.routes.utils.http;
 import java.io.IOException;
 import java.io.InputStream;
 
-import javax.servlet.ServletInputStream;
+import jakarta.servlet.ReadListener;
+import jakarta.servlet.ServletInputStream;
 
 public class TestServletInputStream extends ServletInputStream
 {
@@ -33,5 +34,20 @@ public class TestServletInputStream extends ServletInputStream
   public int read() throws IOException
   {
     return source.read();
+  }
+
+  @Override
+  public boolean isFinished() {
+    return false;
+  }
+
+  @Override
+  public boolean isReady() {
+    return false;
+  }
+
+  @Override
+  public void setReadListener(ReadListener readListener) {
+
   }
 }

@@ -20,8 +20,8 @@ import org.baswell.routes.utils.http.TestHttpServletRequest;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 import static org.junit.Assert.*;

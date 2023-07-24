@@ -23,9 +23,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
 
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 
 public class TestHttpServletResponse implements HttpServletResponse
 {
@@ -84,6 +84,11 @@ public class TestHttpServletResponse implements HttpServletResponse
   public void setContentLength(int len)
   {
     contentLength = len;
+  }
+
+  @Override
+  public void setContentLengthLong(long l) {
+
   }
 
   @Override
@@ -168,18 +173,6 @@ public class TestHttpServletResponse implements HttpServletResponse
   }
 
   @Override
-  public String encodeUrl(String url)
-  {
-    throw new RuntimeException("Not implemented.");
-  }
-
-  @Override
-  public String encodeRedirectUrl(String url)
-  {
-    throw new RuntimeException("Not implemented.");
-  }
-
-  @Override
   public void sendError(int sc, String msg) throws IOException
   {
     responseCode = sc;
@@ -223,12 +216,6 @@ public class TestHttpServletResponse implements HttpServletResponse
 
   @Override
   public void setStatus(int sc)
-  {
-    responseCode = sc;
-  }
-
-  @Override
-  public void setStatus(int sc, String sm)
   {
     responseCode = sc;
   }

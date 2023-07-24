@@ -15,7 +15,7 @@
  */
 package org.baswell.routes;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import static org.baswell.routes.MIMETypes.*;
 import static org.baswell.routes.RoutesMethods.classImplementsInterface;

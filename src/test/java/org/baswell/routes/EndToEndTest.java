@@ -18,7 +18,7 @@ package org.baswell.routes;
 import java.io.IOException;
 import java.util.Set;
 
-import javax.servlet.ServletException;
+import jakarta.servlet.ServletException;
 
 import org.baswell.routes.utils.http.TestHttpServletRequest;
 import org.baswell.routes.utils.http.TestHttpServletResponse;

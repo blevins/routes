@@ -118,7 +118,7 @@ jar {
 }
 
 dependencies {
-    provided 'javax.servlet:servlet-api:2.4'
+    provided 'jakarta.servlet:servlet-api:6.0.0'
     provided 'com.google.code.gson:gson:[2,)'
     provided 'com.googlecode.json-simple:json-simple:[1,)'
     provided 'org.jdom:jdom2:[2,)'

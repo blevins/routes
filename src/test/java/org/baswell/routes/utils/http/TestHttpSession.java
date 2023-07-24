@@ -22,9 +22,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpSessionContext;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.HttpSession;
 
 public class TestHttpSession implements HttpSession
 {
@@ -69,21 +68,9 @@ public class TestHttpSession implements HttpSession
   }
 
   @Override
-  public HttpSessionContext getSessionContext()
-  {
-    throw new RuntimeException("Not implemented.");
-  }
-
-  @Override
   public Object getAttribute(String name)
   {
     return attributes.get(name);
-  }
-
-  @Override
-  public Object getValue(String name)
-  {
-    return values.get(name);
   }
 
   @Override
@@ -92,13 +79,6 @@ public class TestHttpSession implements HttpSession
     return Collections.enumeration(attributes.keySet());
   }
 
-  @Override
-  public String[] getValueNames()
-  {
-    List<String> names = new ArrayList<String>();
-    for (String name : values.keySet()) names.add(name);
-    return names.toArray(new String[names.size()]);
-  }
 
   @Override
   public void setAttribute(String name, Object value)
@@ -107,21 +87,9 @@ public class TestHttpSession implements HttpSession
   }
 
   @Override
-  public void putValue(String name, Object value)
-  {
-    values.put(name, value);
-  }
-
-  @Override
   public void removeAttribute(String name)
   {
     attributes.remove(name);
-  }
-
-  @Override
-  public void removeValue(String name)
-  {
-    values.remove(name);
   }
 
   @Override

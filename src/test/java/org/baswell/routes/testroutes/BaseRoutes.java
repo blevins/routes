@@ -18,7 +18,7 @@ package org.baswell.routes.testroutes;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 import org.baswell.routes.BeforeRoute;
 

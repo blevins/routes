@@ -19,7 +19,7 @@ import org.baswell.routes.utils.http.TestHttpServletRequest;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.servlet.ServletException;
+import jakarta.servlet.ServletException;
 import java.io.IOException;
 
 public class MainTest extends EndToEndTest

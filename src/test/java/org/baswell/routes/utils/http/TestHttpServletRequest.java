@@ -15,11 +15,9 @@
  */
 package org.baswell.routes.utils.http;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletInputStream;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -110,6 +108,11 @@ public class TestHttpServletRequest implements HttpServletRequest
   public int getContentLength()
   {
     return contentLength;
+  }
+
+  @Override
+  public long getContentLengthLong() {
+    return 0;
   }
 
   @Override
@@ -228,12 +231,6 @@ public class TestHttpServletRequest implements HttpServletRequest
   }
 
   @Override
-  public String getRealPath(String path)
-  {
-    throw new RuntimeException("Not implemented.");
-  }
-
-  @Override
   public int getRemotePort()
   {
     throw new RuntimeException("Not implemented.");
@@ -255,6 +252,56 @@ public class TestHttpServletRequest implements HttpServletRequest
   public int getLocalPort()
   {
     throw new RuntimeException("Not implemented.");
+  }
+
+  @Override
+  public ServletContext getServletContext() {
+    return null;
+  }
+
+  @Override
+  public AsyncContext startAsync() throws IllegalStateException {
+    return null;
+  }
+
+  @Override
+  public AsyncContext startAsync(ServletRequest servletRequest, ServletResponse servletResponse) throws IllegalStateException {
+    return null;
+  }
+
+  @Override
+  public boolean isAsyncStarted() {
+    return false;
+  }
+
+  @Override
+  public boolean isAsyncSupported() {
+    return false;
+  }
+
+  @Override
+  public AsyncContext getAsyncContext() {
+    return null;
+  }
+
+  @Override
+  public DispatcherType getDispatcherType() {
+    return null;
+  }
+
+  @Override
+  public String getRequestId() {
+    return null;
+  }
+
+  @Override
+  public String getProtocolRequestId() {
+    return null;
+  }
+
+  @Override
+  public ServletConnection getServletConnection() {
+    return null;
   }
 
   @Override
@@ -385,6 +432,11 @@ public class TestHttpServletRequest implements HttpServletRequest
   }
 
   @Override
+  public String changeSessionId() {
+    return null;
+  }
+
+  @Override
   public boolean isRequestedSessionIdValid()
   {
     return true;
@@ -403,8 +455,32 @@ public class TestHttpServletRequest implements HttpServletRequest
   }
 
   @Override
-  public boolean isRequestedSessionIdFromUrl()
-  {
+  public boolean authenticate(HttpServletResponse httpServletResponse) throws IOException, ServletException {
     return false;
+  }
+
+  @Override
+  public void login(String s, String s1) throws ServletException {
+
+  }
+
+  @Override
+  public void logout() throws ServletException {
+
+  }
+
+  @Override
+  public Collection<Part> getParts() throws IOException, ServletException {
+    return null;
+  }
+
+  @Override
+  public Part getPart(String s) throws IOException, ServletException {
+    return null;
+  }
+
+  @Override
+  public <T extends HttpUpgradeHandler> T upgrade(Class<T> aClass) throws IOException, ServletException {
+    return null;
   }
 }
